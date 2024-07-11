@@ -1,0 +1,27 @@
+{
+  "name": "flucava/request-context-bundle",
+  "type": "symfony-bundle",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "Flucava\\RequestContextBundle\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Philipp Marien",
+      "email": "philipp.marien@bootszentrum-hamburg.de"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.3",
+    "symfony/framework-bundle": "^7.0",
+    "flucava/cqrs-core": "dev-main@dev",
+    "flucava/cqrs-core-bundle": "dev-main@dev",
+    "flucava/request-context": "dev-main@dev"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  }
+}
