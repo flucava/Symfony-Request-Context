@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flucava/PHP-CQRS-Core.git",
-                "reference": "2ac2b13a35487f965c1af38f317c77098cb38c3c"
+                "reference": "02fd37fcddf08c2e562362d805fff0dbbddf3de5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flucava/PHP-CQRS-Core/zipball/2ac2b13a35487f965c1af38f317c77098cb38c3c",
-                "reference": "2ac2b13a35487f965c1af38f317c77098cb38c3c",
+                "url": "https://api.github.com/repos/flucava/PHP-CQRS-Core/zipball/02fd37fcddf08c2e562362d805fff0dbbddf3de5",
+                "reference": "02fd37fcddf08c2e562362d805fff0dbbddf3de5",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "issues": "https://github.com/flucava/PHP-CQRS-Core/issues",
                 "source": "https://github.com/flucava/PHP-CQRS-Core/tree/main"
             },
-            "time": "2024-06-11T10:27:51+00:00"
+            "time": "2024-07-12T16:38:41+00:00"
         },
         {
             "name": "flucava/cqrs-core-bundle",
@@ -57,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flucava/Symfony-CQRS-Core.git",
-                "reference": "32cde95bcc99809d024800a326032e4f7bd53b66"
+                "reference": "9410c825a9b4c63317cde1aabc80f2a43db7d430"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flucava/Symfony-CQRS-Core/zipball/32cde95bcc99809d024800a326032e4f7bd53b66",
-                "reference": "32cde95bcc99809d024800a326032e4f7bd53b66",
+                "url": "https://api.github.com/repos/flucava/Symfony-CQRS-Core/zipball/9410c825a9b4c63317cde1aabc80f2a43db7d430",
+                "reference": "9410c825a9b4c63317cde1aabc80f2a43db7d430",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
                 "issues": "https://github.com/flucava/Symfony-CQRS-Core/issues",
                 "source": "https://github.com/flucava/Symfony-CQRS-Core/tree/main"
             },
-            "time": "2024-07-12T14:14:32+00:00"
+            "time": "2024-07-12T17:31:21+00:00"
         },
         {
             "name": "flucava/request-context",
@@ -102,12 +102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flucava/PHP-Request-Context.git",
-                "reference": "912083f1937b7949c0f9ab14cc696c7ee89092ff"
+                "reference": "38816cb47093e05c9536ae06cf4c199e5dd9fbf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flucava/PHP-Request-Context/zipball/912083f1937b7949c0f9ab14cc696c7ee89092ff",
-                "reference": "912083f1937b7949c0f9ab14cc696c7ee89092ff",
+                "url": "https://api.github.com/repos/flucava/PHP-Request-Context/zipball/38816cb47093e05c9536ae06cf4c199e5dd9fbf5",
+                "reference": "38816cb47093e05c9536ae06cf4c199e5dd9fbf5",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "issues": "https://github.com/flucava/PHP-Request-Context/issues",
                 "source": "https://github.com/flucava/PHP-Request-Context/tree/main"
             },
-            "time": "2024-07-12T16:26:16+00:00"
+            "time": "2024-07-12T18:31:11+00:00"
         },
         {
             "name": "psr/cache",

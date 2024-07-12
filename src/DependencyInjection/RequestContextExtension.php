@@ -17,6 +17,8 @@ use Flucava\RequestContextBundle\Console\InitializeCommand;
 use Flucava\RequestContextBundle\Console\RegisterContextCommand;
 use Flucava\RequestContextBundle\Console\RemoveContextCommand;
 use Flucava\RequestContextBundle\Console\RemoveUriCommand;
+use Flucava\RequestContextBundle\Listener\CommandListener;
+use Flucava\RequestContextBundle\Listener\RequestListener;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
@@ -76,5 +78,17 @@ class RequestContextExtension extends ConfigurableExtension
 
         $container->autowire(RemoveUriCommand::class)
             ->addTag('console.command');
+
+        $container->autowire(CommandListener::class)
+            ->addTag(
+                'kernel.event_listener',
+                ['event' => 'console.command']
+            );
+
+        $container->autowire(RequestListener::class)
+            ->addTag(
+                'kernel.event_listener',
+                ['event' => 'kernel.request', 'priority' => 50]
+            );
     }
 }
