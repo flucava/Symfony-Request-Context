@@ -2,6 +2,7 @@
 
 namespace Flucava\RequestContextBundle\Listener;
 
+use Flucava\RequestContext\Model\View\Context;
 use Flucava\RequestContext\Service\ContextProvider;
 use Flucava\RequestContextBundle\Console\Command;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
@@ -23,7 +24,7 @@ readonly class CommandListener
 
         $context = $event->getInput()->getOption('context');
         if (!$context) {
-            return;
+            $context = Context::MAIN_ID;
         }
 
         $this->contextProvider->loadContext(
