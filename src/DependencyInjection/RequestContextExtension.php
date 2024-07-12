@@ -9,7 +9,7 @@ use Flucava\RequestContext\CommandHandler\GenerateInstanceManagerKeyHandler;
 use Flucava\RequestContext\CommandHandler\RegisterContextHandler;
 use Flucava\RequestContext\CommandHandler\RemoveContextHandler;
 use Flucava\RequestContext\CommandHandler\RemoveUriHandler;
-use Flucava\RequestContext\Model\Command\VerifyInstanceManagerKey;
+use Flucava\RequestContext\CommandHandler\VerifyInstanceManagerKeyHandler;
 use Flucava\RequestContext\QueryHandler\LoadContextByIdHandler;
 use Flucava\RequestContext\QueryHandler\LoadContextByUriHandler;
 use Flucava\RequestContext\Service\ContextProvider;
@@ -70,7 +70,7 @@ class RequestContextExtension extends ConfigurableExtension
             ->setPublic(false)
             ->addTag(CommandHandlerBusPass::SERVICE_TAG);
 
-        $container->autowire(VerifyInstanceManagerKey::class)
+        $container->autowire(VerifyInstanceManagerKeyHandler::class)
             ->setPublic(false)
             ->addTag(CommandHandlerBusPass::SERVICE_TAG);
 

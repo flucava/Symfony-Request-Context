@@ -17,7 +17,7 @@ class GenerateInstanceManagerKeyCommand extends Command
 {
     public function __construct(private readonly CommandBus $commandBus)
     {
-        parent::__construct('flucava:request-context:uri:remove');
+        parent::__construct('flucava:request-context:instance-manager:generate-key');
 
         $this->addArgument('uri', InputArgument::REQUIRED);
     }
