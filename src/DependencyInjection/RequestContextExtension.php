@@ -12,7 +12,11 @@ use Flucava\RequestContext\QueryHandler\LoadContextByIdHandler;
 use Flucava\RequestContext\QueryHandler\LoadContextByUriHandler;
 use Flucava\RequestContext\Service\ContextProvider;
 use Flucava\RequestContext\Service\FilenameProvider;
+use Flucava\RequestContextBundle\Console\AddUriCommand;
 use Flucava\RequestContextBundle\Console\InitializeCommand;
+use Flucava\RequestContextBundle\Console\RegisterContextCommand;
+use Flucava\RequestContextBundle\Console\RemoveContextCommand;
+use Flucava\RequestContextBundle\Console\RemoveUriCommand;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
@@ -59,6 +63,18 @@ class RequestContextExtension extends ConfigurableExtension
 
         $container->autowire(InitializeCommand::class)
             ->setArgument('$storage', $mergedConfig['storage_path'])
+            ->addTag('console.command');
+
+        $container->autowire(AddUriCommand::class)
+            ->addTag('console.command');
+
+        $container->autowire(RegisterContextCommand::class)
+            ->addTag('console.command');
+
+        $container->autowire(RemoveContextCommand::class)
+            ->addTag('console.command');
+
+        $container->autowire(RemoveUriCommand::class)
             ->addTag('console.command');
     }
 }
