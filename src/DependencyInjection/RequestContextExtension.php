@@ -58,6 +58,7 @@ class RequestContextExtension extends ConfigurableExtension
             ->addTag(CommandHandlerBusPass::SERVICE_TAG);
 
         $container->autowire(InitializeCommand::class)
+            ->setArgument('$storage', $mergedConfig['storage_path'])
             ->addTag('console.command');
     }
 }
