@@ -102,12 +102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flucava/PHP-Request-Context.git",
-                "reference": "b036a9ad3d788f8dc1fd4ec3e7ea7dfd8aed0a6a"
+                "reference": "79e16ec52d64e934de863ec2f98c54a92c982711"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flucava/PHP-Request-Context/zipball/b036a9ad3d788f8dc1fd4ec3e7ea7dfd8aed0a6a",
-                "reference": "b036a9ad3d788f8dc1fd4ec3e7ea7dfd8aed0a6a",
+                "url": "https://api.github.com/repos/flucava/PHP-Request-Context/zipball/79e16ec52d64e934de863ec2f98c54a92c982711",
+                "reference": "79e16ec52d64e934de863ec2f98c54a92c982711",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "issues": "https://github.com/flucava/PHP-Request-Context/issues",
                 "source": "https://github.com/flucava/PHP-Request-Context/tree/main"
             },
-            "time": "2024-07-12T19:53:59+00:00"
+            "time": "2024-07-12T22:06:03+00:00"
         },
         {
             "name": "psr/cache",

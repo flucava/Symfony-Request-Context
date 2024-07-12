@@ -5,14 +5,17 @@ namespace Flucava\RequestContextBundle\DependencyInjection;
 use Flucava\CqrsCoreBundle\DependencyInjection\Compiler\CommandHandlerBusPass;
 use Flucava\CqrsCoreBundle\DependencyInjection\Compiler\QueryHandlerBusPass;
 use Flucava\RequestContext\CommandHandler\AddUriHandler;
+use Flucava\RequestContext\CommandHandler\GenerateInstanceManagerKeyHandler;
 use Flucava\RequestContext\CommandHandler\RegisterContextHandler;
 use Flucava\RequestContext\CommandHandler\RemoveContextHandler;
 use Flucava\RequestContext\CommandHandler\RemoveUriHandler;
+use Flucava\RequestContext\Model\Command\VerifyInstanceManagerKey;
 use Flucava\RequestContext\QueryHandler\LoadContextByIdHandler;
 use Flucava\RequestContext\QueryHandler\LoadContextByUriHandler;
 use Flucava\RequestContext\Service\ContextProvider;
 use Flucava\RequestContext\Service\FilenameProvider;
 use Flucava\RequestContextBundle\Console\AddUriCommand;
+use Flucava\RequestContextBundle\Console\GenerateInstanceManagerKeyCommand;
 use Flucava\RequestContextBundle\Console\InitializeCommand;
 use Flucava\RequestContextBundle\Console\RegisterContextCommand;
 use Flucava\RequestContextBundle\Console\RemoveContextCommand;
@@ -51,6 +54,10 @@ class RequestContextExtension extends ConfigurableExtension
             ->setPublic(false)
             ->addTag(CommandHandlerBusPass::SERVICE_TAG);
 
+        $container->autowire(GenerateInstanceManagerKeyHandler::class)
+            ->setPublic(false)
+            ->addTag(CommandHandlerBusPass::SERVICE_TAG);
+
         $container->autowire(RegisterContextHandler::class)
             ->setPublic(false)
             ->addTag(CommandHandlerBusPass::SERVICE_TAG);
@@ -63,11 +70,18 @@ class RequestContextExtension extends ConfigurableExtension
             ->setPublic(false)
             ->addTag(CommandHandlerBusPass::SERVICE_TAG);
 
+        $container->autowire(VerifyInstanceManagerKey::class)
+            ->setPublic(false)
+            ->addTag(CommandHandlerBusPass::SERVICE_TAG);
+
         $container->autowire(InitializeCommand::class)
             ->setArgument('$storage', $mergedConfig['storage_path'])
             ->addTag('console.command');
 
         $container->autowire(AddUriCommand::class)
+            ->addTag('console.command');
+
+        $container->autowire(GenerateInstanceManagerKeyCommand::class)
             ->addTag('console.command');
 
         $container->autowire(RegisterContextCommand::class)
