@@ -4,9 +4,9 @@ namespace Flucava\RequestContextBundle\Console;
 
 use Flucava\CqrsCore\Command\CommandBus;
 use Flucava\RequestContext\Model\Command\GenerateInstanceManagerKey;
-use Flucava\RequestContext\Model\Command\RemoveUri;
-use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -19,7 +19,7 @@ class GenerateInstanceManagerKeyCommand extends Command
     {
         parent::__construct('flucava:request-context:instance-manager:generate-key');
 
-        $this->addArgument('uri', InputArgument::REQUIRED);
+        $this->addOption('force', 'f', InputOption::VALUE_NONE);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -28,6 +28,10 @@ class GenerateInstanceManagerKeyCommand extends Command
         $key = $this->commandBus->handle(
             new GenerateInstanceManagerKey(true)
         );
+
+        if (!$input->getOption('force')) {
+            throw new InvalidArgumentException('Please execute this command with the option --force');
+        }
 
         $io = new SymfonyStyle($input, $output);
         $io->success('Successfully (re-)generated your instance manager key.');
