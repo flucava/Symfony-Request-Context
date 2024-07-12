@@ -36,7 +36,7 @@ class GenerateInstanceManagerKeyCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->success('Successfully (re-)generated your instance manager key.');
         $io->newLine();
-        $io->comment('KEY: ' . $key->getKey());
+        $io->note('KEY: ' . $key->getKey());
         $io->newLine();
         $io->caution('Please store this key at your instance manager and keep it secret! If you loose this key, you have to generate a new one.');
 
