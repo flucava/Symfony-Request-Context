@@ -57,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flucava/Symfony-CQRS-Core.git",
-                "reference": "f7a0aeaaa0674d1dbe1e73c18ba2a7d08e0e05ea"
+                "reference": "32cde95bcc99809d024800a326032e4f7bd53b66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flucava/Symfony-CQRS-Core/zipball/f7a0aeaaa0674d1dbe1e73c18ba2a7d08e0e05ea",
-                "reference": "f7a0aeaaa0674d1dbe1e73c18ba2a7d08e0e05ea",
+                "url": "https://api.github.com/repos/flucava/Symfony-CQRS-Core/zipball/32cde95bcc99809d024800a326032e4f7bd53b66",
+                "reference": "32cde95bcc99809d024800a326032e4f7bd53b66",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
                 "issues": "https://github.com/flucava/Symfony-CQRS-Core/issues",
                 "source": "https://github.com/flucava/Symfony-CQRS-Core/tree/main"
             },
-            "time": "2024-06-10T22:15:19+00:00"
+            "time": "2024-07-12T14:14:32+00:00"
         },
         {
             "name": "flucava/request-context",
@@ -102,12 +102,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/flucava/php-request-context.git",
-                "reference": "ccb8d334667b34ae68bee7e7a34458b47be8f974"
+                "reference": "d4cb76cc4c5cf87ec60f9da5fd76625d3174a200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flucava/php-request-context/zipball/ccb8d334667b34ae68bee7e7a34458b47be8f974",
-                "reference": "ccb8d334667b34ae68bee7e7a34458b47be8f974",
+                "url": "https://api.github.com/repos/flucava/php-request-context/zipball/d4cb76cc4c5cf87ec60f9da5fd76625d3174a200",
+                "reference": "d4cb76cc4c5cf87ec60f9da5fd76625d3174a200",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "issues": "https://github.com/flucava/php-request-context/issues",
                 "source": "https://github.com/flucava/php-request-context/tree/main"
             },
-            "time": "2024-07-11T14:44:27+00:00"
+            "time": "2024-07-11T21:28:06+00:00"
         },
         {
             "name": "psr/cache",
@@ -2109,12 +2109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "fc38d77fa25d52b7da4c00962fa4189549c60e16"
+                "reference": "c31e886d98723c528ab99e920e7903ccb7391bd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fc38d77fa25d52b7da4c00962fa4189549c60e16",
-                "reference": "fc38d77fa25d52b7da4c00962fa4189549c60e16",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/c31e886d98723c528ab99e920e7903ccb7391bd0",
+                "reference": "c31e886d98723c528ab99e920e7903ccb7391bd0",
                 "shasum": ""
             },
             "conflict": {
@@ -2151,6 +2151,7 @@
                 "athlon1600/php-proxy": "<=5.1",
                 "athlon1600/php-proxy-app": "<=3",
                 "austintoddj/canvas": "<=3.4.2",
+                "auth0/wordpress": "<=4.6",
                 "automad/automad": "<=1.10.9",
                 "automattic/jetpack": "<9.8",
                 "awesome-support/awesome-support": "<=6.0.7",
@@ -2909,7 +2910,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-10T17:04:19+00:00"
+            "time": "2024-07-11T20:05:10+00:00"
         }
     ],
     "aliases": [],

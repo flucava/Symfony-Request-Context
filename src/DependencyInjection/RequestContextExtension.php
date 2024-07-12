@@ -2,6 +2,8 @@
 
 namespace Flucava\RequestContextBundle\DependencyInjection;
 
+use Flucava\CqrsCoreBundle\DependencyInjection\Compiler\CommandHandlerBusPass;
+use Flucava\CqrsCoreBundle\DependencyInjection\Compiler\QueryHandlerBusPass;
 use Flucava\RequestContext\CommandHandler\AddUriHandler;
 use Flucava\RequestContext\CommandHandler\RegisterContextHandler;
 use Flucava\RequestContext\CommandHandler\RemoveContextHandler;
@@ -29,21 +31,27 @@ class RequestContextExtension extends ConfigurableExtension
             ->setArgument('$storage', $mergedConfig['storage_path']);
 
         $container->autowire(LoadContextByIdHandler::class)
-            ->setPublic(false);
+            ->setPublic(false)
+            ->addTag(QueryHandlerBusPass::SERVICE_TAG);
 
         $container->autowire(LoadContextByUriHandler::class)
-            ->setPublic(false);
+            ->setPublic(false)
+            ->addTag(QueryHandlerBusPass::SERVICE_TAG);
 
         $container->autowire(AddUriHandler::class)
-            ->setPublic(false);
+            ->setPublic(false)
+            ->addTag(CommandHandlerBusPass::SERVICE_TAG);
 
         $container->autowire(RegisterContextHandler::class)
-            ->setPublic(false);
+            ->setPublic(false)
+            ->addTag(CommandHandlerBusPass::SERVICE_TAG);
 
         $container->autowire(RemoveContextHandler::class)
-            ->setPublic(false);
+            ->setPublic(false)
+            ->addTag(CommandHandlerBusPass::SERVICE_TAG);
 
         $container->autowire(RemoveUriHandler::class)
-            ->setPublic(false);
+            ->setPublic(false)
+            ->addTag(CommandHandlerBusPass::SERVICE_TAG);
     }
 }

@@ -12,11 +12,15 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $builder = new TreeBuilder('flucava_request_context');
+        $builder = new TreeBuilder('request_context');
         $root = $builder->getRootNode()->children();
 
-        $root->scalarNode('storage_path')->isRequired()->cannotBeEmpty();
-        $root->variableNode('default_settings')->defaultValue([]);
+        $root->scalarNode('storage_path')
+            ->defaultValue('%kernel.project_dir%/var/request-context')
+            ->cannotBeEmpty();
+
+        $root->variableNode('default_settings')
+            ->defaultValue([]);
 
         $builder->getRootNode()->addDefaultsIfNotSet();
 
