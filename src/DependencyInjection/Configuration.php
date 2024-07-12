@@ -19,6 +19,10 @@ class Configuration implements ConfigurationInterface
             ->defaultValue('%kernel.project_dir%/var/request-context')
             ->cannotBeEmpty();
 
+        $root->arrayNode('main_uris')
+            ->defaultValue([])
+            ->scalarPrototype();
+
         $root->variableNode('default_settings')
             ->defaultValue([]);
 

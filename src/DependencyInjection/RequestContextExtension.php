@@ -12,6 +12,7 @@ use Flucava\RequestContext\QueryHandler\LoadContextByIdHandler;
 use Flucava\RequestContext\QueryHandler\LoadContextByUriHandler;
 use Flucava\RequestContext\Service\ContextProvider;
 use Flucava\RequestContext\Service\FilenameProvider;
+use Flucava\RequestContextBundle\Console\InitializeCommand;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
@@ -23,8 +24,7 @@ class RequestContextExtension extends ConfigurableExtension
     protected function loadInternal(array $mergedConfig, ContainerBuilder $container): void
     {
         $container->autowire(ContextProvider::class)
-            ->setPublic(false)
-            ->setArgument('$defaultSettings', $mergedConfig['default_settings']);
+            ->setPublic(false);
 
         $container->autowire(FilenameProvider::class)
             ->setPublic(false)
@@ -32,10 +32,13 @@ class RequestContextExtension extends ConfigurableExtension
 
         $container->autowire(LoadContextByIdHandler::class)
             ->setPublic(false)
+            ->setArgument('$defaultSettings', $mergedConfig['default_settings'])
             ->addTag(QueryHandlerBusPass::SERVICE_TAG);
 
         $container->autowire(LoadContextByUriHandler::class)
             ->setPublic(false)
+            ->setArgument('$mainUris', $mergedConfig['main_uris'])
+            ->setArgument('$defaultSettings', $mergedConfig['default_settings'])
             ->addTag(QueryHandlerBusPass::SERVICE_TAG);
 
         $container->autowire(AddUriHandler::class)
@@ -53,5 +56,8 @@ class RequestContextExtension extends ConfigurableExtension
         $container->autowire(RemoveUriHandler::class)
             ->setPublic(false)
             ->addTag(CommandHandlerBusPass::SERVICE_TAG);
+
+        $container->autowire(InitializeCommand::class)
+            ->addTag('console.command');
     }
 }
