@@ -20,6 +20,8 @@ use Flucava\RequestContextBundle\Console\InitializeCommand;
 use Flucava\RequestContextBundle\Console\RegisterContextCommand;
 use Flucava\RequestContextBundle\Console\RemoveContextCommand;
 use Flucava\RequestContextBundle\Console\RemoveUriCommand;
+use Flucava\RequestContextBundle\Controller\ContextController;
+use Flucava\RequestContextBundle\Controller\UriController;
 use Flucava\RequestContextBundle\Listener\CommandListener;
 use Flucava\RequestContextBundle\Listener\RequestListener;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -104,5 +106,11 @@ class RequestContextExtension extends ConfigurableExtension
                 'kernel.event_listener',
                 ['event' => 'kernel.request', 'priority' => 50]
             );
+
+        $container->autowire(ContextController::class)
+            ->addTag('controller.service_arguments');
+
+        $container->autowire(UriController::class)
+            ->addTag('controller.service_arguments');
     }
 }
