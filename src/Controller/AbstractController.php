@@ -35,7 +35,7 @@ abstract readonly class AbstractController
         }
 
         $authorization = $request->headers->get('Authorization');
-        if (!str_starts_with('Bearer ', $authorization)) {
+        if (!str_starts_with($authorization, 'Bearer ')) {
             throw new UnauthorizedHttpException('Missing bearer token');
         }
 
